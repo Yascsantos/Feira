@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <link rel="icon" type="imagem/png" href="imgs/icon.png" />
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+            <title>Pagamento| Join in the Spoon</title>
+            <link rel="stylesheet" href="css/pagamento.css" type="text/css">
+        </head>
+<body>
+  
+
+    <!-- formulário cadastro -->
+    <center>
+    <form action="pagamento.php" method="GET">	
+    <!-- forma de pagamento-->	
+    <h2>Selecione a forma de pagamento: </h2> <br>
+    
+    <input type="radio" id="dinheiro" name="forma" value="dinheiro">
+    <span class="material-symbols-outlined">
+        payments <p>Dinheiro</p>
+        </span>
+
+        <input type="radio" id="cartao" name="forma" value="cartao">
+        <span class="material-symbols-outlined">
+            credit_card <p for="cartao">Cartão</p>
+            </span>
+  
+
+        <input type="radio" id="Pix" name="forma" value="Pix"><span class="material-symbols-outlined">
+        <p for="Pix">Pix</p></span><br>
+
+        <br/><br/><input type="submit" name="finalizar" value="Finalizar" />
+        
+    </form></center>
+
+</body>
+</html>

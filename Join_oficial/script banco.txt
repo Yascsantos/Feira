@@ -1,0 +1,77 @@
+DROP DATABASE if EXISTS doceria; 
+
+CREATE DATABASE doceria;
+USE doceria;
+
+CREATE TABLE produto(
+	/*id_pro INT NOT NULL PRIMARY KEY AUTO_INCREMENT,*/
+	nome VARCHAR(50) NOT NULL PRIMARY KEY
+);
+
+CREATE TABLE descricao (
+  id_desc INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  produto VARCHAR (50), 
+  preco DECIMAL (8,2),
+  sabor VARCHAR (50),
+
+	FOREIGN KEY (produto)REFERENCES produto (nome)
+);
+
+CREATE TABLE entrega (
+  id_en INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  data_entrega DATE,
+  hora TIME,
+  endereco VARCHAR (50)
+  
+);
+
+CREATE TABLE retirada (
+  id_ret INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  data_retirada DATE,
+  hora TIME  
+);
+
+CREATE TABLE pagamento (
+  id_pag INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  forma VARCHAR (50), /*forma de pagamnto*/
+  preço Decimal
+);
+
+CREATE TABLE cadastro (
+  id_user INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR (50),
+  email VARCHAR (50),
+  telefone VARCHAR (11),
+  senha VARCHAR (25) 
+  
+);
+
+CREATE TABLE pedido (
+  id_ped INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  produto VARCHAR (50),
+  quantidade INT,
+  sabor VARCHAR (50),
+  
+  	FOREIGN KEY (produto)REFERENCES produto (nome)  
+);
+
+/*
+
+CREATE TABLE pedidos (
+  id_pedido INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  cadastro INT, 
+  encomenda INT,
+  
+	FOREIGN KEY (cadastro) REFERENCES cadastro (id_user),
+	FOREIGN KEY (encomenda) REFERENCES encomendas (id_encom)
+);
+
+CREATE TABLE avaliação (
+  id_avaliação INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  cliente_avaliou INT,
+  produto_avaliado INT,
+  nota_avalicao INT,
+  comentario VARCHAR (100),
+    FOREIGN KEY (cliente_avaliou) REFERENCES cliente (num_user),
+	 FOREIGN KEY (produto_avaliado) REFERENCES produto (id_pro)  
+);*/

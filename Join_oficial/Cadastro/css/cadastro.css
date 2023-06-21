@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background:linear-gradient(90deg,#684d4d 0%,#684d4d 30%,  #cbacaad3 30%, #cbacaad3 100%);
+  
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+main{
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 10vh;
+}
+
+#menu{
+    width:100%;
+    background-color:#cbacaad3;
+  }
+  .logo img{
+    width:12vh;
+    height:12vh;
+   
+  }
+
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui,  Helvetica, Arial, sans-serif;
+    height: 12vh;
+  }
+  
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+  }
+  
+  .mobile-menu {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+  }
+ 
+  .nav-list.active {
+    transform: translateX(0);
+  }
+
+ 
+  
+
+  a{
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    font-size: 0.9rem;
+    text-decoration:none;
+    font-size: 0.9rem;
+    font-weight:600;
+    color:#333235;
+  }
+ 
+ 
+  a:hover{
+    color:#33323591;
+  }
+.senha{
+    width: 50%;
+    float: left;
+    padding-right: 15px;
+}
+.caixa{
+    display: flex;
+    width: 930px;
+}
+.img-caixa{
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px  0 0 20px;
+}
+.img-caixa img{
+    width: 100%;
+}
+.form-caixa{
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(40px);
+    padding: 30px 40px;
+    width: 50%;
+    border-radius: 0 20px 20px 0;
+}
+.form-caixa h2{
+    font-size: 30px;
+}
+.form-caixa p{
+    font-weight: bold;
+    color: #3D3D3D;
+}
+.form-caixa p a{
+    color: hsl(342, 46%, 75%);
+    text-decoration: none;
+}
+.form-caixa form{
+    margin: 20px 0;
+}
+form .input-group{
+    margin-bottom: 15px;
+}
+form .input-group label{
+    color: #3D3D3D;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+form .input-group input{
+    width: 100%;
+    height: 47px;
+    background-color: rgba(255, 255, 255, 0.32);
+    border-radius: 20px;
+    outline: none;
+    border: 2px solid transparent;
+    padding: 15px;
+    font-size: 15px;
+    color: #616161;
+    transition: all 0.4s ease;
+}
+form .input-group input:focus{
+    border-color: #ff008869;
+}
+form .input-group button{
+    width: 100%;
+    height: 47px;
+    background:  hsl(342, 25%, 47%);
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    margin-top: 15px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+@media (max-width:930px) {
+    .img-caixa{
+        display: none;
+    }
+    .form-caixa{
+        width: 700px;
+    }
+    .form-caixa{
+        width: 100%;
+        border-radius: 20px;
+    }
+}
+@media (max-width:500px) {
+    .senha{
+        width: 100%;
+        padding: 0;
+    }
+}

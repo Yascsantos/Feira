@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pedido|Join in the Spoon</title>
+		<link rel="icon" type="imagem/png" href="../imgs/icon.png" />
+		<link rel="stylesheet" href="../Retira/css/retira.css" type="text/css">
+	</head>
+		<body>
+			<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background:linear-gradient(90deg,#684d4d 0%,#684d4d 30%,  #cbacaad3 30%, #cbacaad3 100%);
+  
+}
+#menu{
+  width:100%;
+  background-color:#cbacaad3;
+}
+.logo img{
+  width:12vh;
+  height:12vh;
+ 
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui,  Helvetica, Arial, sans-serif;
+  height: 12vh;
+}
+
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+.nav-list.active {
+  transform: translateX(0);
+}
+
+
+
+
+
+a{
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  font-size: 0.9rem;
+  text-decoration:none;
+  font-size: 0.9rem;
+  font-weight:600;
+  color:#333235;
+}
+
+
+a:hover{
+  color:#33323591;
+}
+
+form{
+    background-color: rgba(255, 255, 255, 0.4);
+   
+    padding: 30px 40px;
+    width: 50%;
+    border-radius:20px ;
+  
+
+    
+}
+h2{
+  font-size: 30px;
+  text-align: center;
+}
+
+form label{
+  color: #3D3D3D;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+form  .input {
+  width: 70%;
+  height: 47px;
+  background:  hsla(342, 30%, 62%, 0.842);
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  margin-top: 15px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+form  .input:focus{
+  border-color: #ff008869;
+}
+
+form input[type="submit"]{
+  width: 100%;
+  height: 47px;
+  background:  hsl(342, 25%, 47%);
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  margin-top: 15px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/*Rsponsivo*/
+ 
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+
+@media (max-width: 1300px){
+  .navbar .max-width{
+      margin-left: 0;
+  }
+}
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-list {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 50vw;
+    height: 92vh;
+    background-color:#ad7d7ba2;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+			</style>
+		<header id="menu">
+		
+			   
+			  <nav >
+				<div class="logo"><img src="../imgs/logo.png"  ></div>
+		
+				<div class="mobile-menu">
+				  <div class="line1"></div>
+				  <div class="line2"></div>
+				  <div class="line3"></div>
+				 
+				</div>
+				<ul class="nav-list">
+					<li><a href="../../../index/index.php">INICIO</a></li>
+					<li><a href="../../../contato/contato.html">CONTATO</a></li>
+					<li><a href="../../../sobre_nos/sobre.html">SOBRE NOS</a></li>
+					<li><a href="https://goo.gl/maps/E9MvDvJCDCmGBeWX7">ENDERECO</a></li>
+					<li><a href="../../../logout.php">SAIR</a></li>
+			  
+				 
+				</ul>
+		
+			   </nav>
+		</header>
+		<center>
+		<form action="entrega.php" method="GET">	
+		<div class="entrega">
+		<h2>Escolha data e hora da Entrega</h2>       
+		<!-- formulário cadastro -->
+				
+			<span>Hora: </span>
+            <input type="time" name="hora" class="input"/><br/>
+			<span>Data: </span>
+			<input type="date" name="data" class="input"/><br/>
+            <span>Endereco: </span>
+			<input type="text" name="endereco" class="input"/><br/>
+			<br/><br/><input type="submit" name="finalizar" value="Finalizar" />
+		
+	</div>
+</form>
+</center>
+<script src="../../../index/js/mobile-navbar.js"></script>
+	</body>
+</html>

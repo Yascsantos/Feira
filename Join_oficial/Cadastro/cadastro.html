@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="port">
+
+<head>
+    <link rel="icon" type="imagem/png" href="imgs/icon.png" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://unpkg.com/jwt-decode/builid/jwt-decode.js"></script>
+    <script>
+        function handleCredentialResponse(response) {
+       const data = jwt_decode(response.creential)
+       console.log(data)
+        }
+        window.onload = function () {
+          google.accounts.id.initialize({
+            client_id: "438995254297-haloblbi7ltlpvul8d7te877rjbpsbcm.apps.googleusercontent.com",
+            callback: handleCredentialResponse
+          });
+          google.accounts.id.renderButton(
+            document.getElementById("buttonDiv"),
+            { theme: "filled_black",
+            size: "large",
+            type:"standard",
+            shape:"pill",
+            text:"${button.text}",
+            locale:"br",
+            logo_alignment :"left",
+            width:"300"
+
+
+        }  // customization attributes
+          );
+          google.accounts.id.prompt(); // also display the One Tap dialog
+        }
+    </script>
+     
+    <link rel="stylesheet" href="css/cadastro.css">
+    <title>Cadastro| Join in the Spoon</title>
+</head>
+
+<body>
+    <header id="menu">
+     
+        <nav >
+          <div class="logo"><img src="imgs/logo.png"  ></div>
+
+          <ul class="nav-list">
+            <li ><a href="../contato/contato.html">CONTATO</a></li>
+            <li><a href="https://goo.gl/maps/E9MvDvJCDCmGBeWX7">ENDEREÇO</a></li>
+            <li><a href="../login/login.php">LOGIN</a></li></i>
+        
+           
+          </ul>
+
+         </nav>
+        
+  </header>
+     <main>
+    <div class="caixa">
+        <div class="img-caixa">
+            <img src="imgs/img-formulario.jpg">
+        </div>
+        <div class="form-caixa">
+            <h2>Criar Conta</h2>
+            <p> Já é um membro? <a href="../login/login.php"> Login </a> </p>
+
+            
+            <a href="./imgs/perfil.png">01</a><br>
+            <a href="./imgs/perfil.png">02
+
+            </a>
+            <!--
+            <a href="/Cadastro/imgs/perfil.png">02</a>
+            -->
+
+
+            <!--Formulário-->
+            <form action="Cadastro.php">
+                <div class="input-group">
+                    <label for="nome"> Nome Completo</label>
+                    <input type="text" name="nome" placeholder="Digite o seu nome " required>
+                </div>
+
+            <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" placeholder="Digite o seu email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" name="telefone" placeholder="+55 (11) 96150-4684" required>
+                </div>
+
+                <div class="input-group senha">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" placeholder="Digite sua senha" required>
+                </div>
+
+                <div class="input-group senha">
+                    <label for="Confirmarsenha">Confirmar Senha</label>
+                    <input type="password" name="Confirmarsenha" placeholder="Confirme a senha" required>
+                </div>
+              
+
+                <div class="input-group">
+                    <br/><br/> <a href="../login/login.php"><input type="submit" name="cadastrar" value="Cadastrar" /></a>
+                </div>
+                <div id="buttonDiv"></div>
+
+            </form>
+        </div>
+    </div></main>
+
+
+</body>
+</html>
